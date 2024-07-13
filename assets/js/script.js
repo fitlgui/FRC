@@ -23,7 +23,7 @@ function updateTotalValue() {
                  parseInt(rangeInputaf.value) +
                  parseInt(rangeInputafc.value) +
                  parseInt(rangeInputapf.value);
-    totalValueSpan.textContent = totalValue;
+    totalValueSpan.textContent = 'Pontos: '+totalValue;
 }
 
 rangeInputafautonomo.addEventListener('input', function () {
