@@ -13,6 +13,45 @@ const rangeValueafc = document.getElementById('afc');
 const rangeInputapf = document.getElementById('rangeapf');
 const rangeValueapf = document.getElementById('apf');
 
+// 
+const totalValueSpan = document.getElementById('totalValue');
+let totalValue = parseInt(totalValueSpan.textContent, 10);
+
+function updateTotalValue() {
+    totalValue = parseInt(rangeInputafautonomo.value) +
+                 parseInt(rangeInputampautonomo.value) +
+                 parseInt(rangeInputaf.value) +
+                 parseInt(rangeInputafc.value) +
+                 parseInt(rangeInputapf.value);
+    totalValueSpan.textContent = totalValue;
+}
+
+rangeInputafautonomo.addEventListener('input', function () {
+    rangeValueafautonomo.textContent = this.value;
+    updateTotalValue();
+});
+
+rangeInputampautonomo.addEventListener('input', function () {
+    rangeValueampautonomo.textContent = this.value;
+    updateTotalValue();
+});
+
+rangeInputaf.addEventListener('input', function () {
+    rangeValueaf.textContent = this.value;
+    updateTotalValue();
+});
+
+rangeInputafc.addEventListener('input', function () {
+    rangeValueafc.textContent = this.value;
+    updateTotalValue();
+});
+
+rangeInputapf.addEventListener('input', function () {
+    rangeValueapf.textContent = this.value;
+    updateTotalValue();
+});
+// 
+
 rangeInputafautonomo.addEventListener('input', function () {
     rangeValueafautonomo.textContent = this.value;
 });
