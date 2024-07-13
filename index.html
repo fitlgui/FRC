@@ -115,19 +115,25 @@
         <div class="container-fluid p-3 border border-danger border-1 rounded-2 mt-3">
             <form name="" action="#" class="">
                 <span class="fw-bolder">TELE-OP</span>
-                <div class="row g-3 mt-3">
+               <div class="row g-3 mt-3">
                     <div class="col-md-4 mt-1">
-                        <label for="customRange2" class="form-label fw-bold">Alto Falante</label>
-                        <input type="range" class="form-range" id="customRange1">
+                        <label for="customRange2" class="form-label fw-bolder">Alto Falante:</label>
+
+                        <label for="customRange1">Valor selecionado = <span id="af">5</span></label>
+                        <input type="range" class="form-range" id="rangeaf" min="0" max="30" value="5">
                     </div>
                     <div class="col-md-4 mt-1">
                         <label for="customRange2" class="form-label fw-bolder">Auto Falante (COP)</label>
-                        <input type="range" class="form-range" id="customRange1">
+
+                        <label for="customRange1">Valor selecionado = <span id="afc">10</span></label>
+                        <input type="range" class="form-range" id="rangeafc" min="0" max="30" value="10">
                     </div>
                     <!--  -->
                     <div class="col-md-4 mt-1">
                         <label for="customRange2" class="form-label fw-bolder">Amplificador</label>
-                        <input type="range" class="form-range" id="customRange1">
+
+                        <label for="customRange1">Valor selecionado = <span id="apf">15</span></label>
+                        <input type="range" class="form-range" id="rangeapf" min="0" max="30" value="15">
                     </div>
                 </div>
                 <!--  -->
