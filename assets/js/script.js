@@ -19,6 +19,9 @@ rangeInputapf.addEventListener('input', function () {
     rangeValueapf.textContent = this.value;
 });
 /////////////////////////////
+const checksaida = document.getElementById('checksaida');
+const labelsaida = document.getElementById('labelsaida');
+
 const checkcorrente = document.getElementById('checkcorrente');
 const labelcorrente = document.getElementById('labelcorrente');
 
@@ -27,6 +30,14 @@ const labeltrap = document.getElementById('labeltrap');
 
 const checkbox = document.getElementById('checkmic');
 const label = document.getElementById('labelmic');
+
+checksaida.addEventListener('change', function () {
+    if (this.checked) {
+        labelsaida.textContent = 'Sim';
+    } else {
+        labelsaida.textContent = 'Não';
+    }
+});
 
 checkcorrente.addEventListener('change', function () {
     if (this.checked) {
