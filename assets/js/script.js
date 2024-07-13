@@ -15,7 +15,7 @@ const rangeValueapf = document.getElementById('apf');
 
 // 
 const totalValueSpan = document.getElementById('totalValue');
-let totalValue = parseInt(totalValueSpan.textContent, 10);
+let totalValue = parseInt(totalValueSpan.textContent, 0);
 
 function updateTotalValue() {
     totalValue = parseInt(rangeInputafautonomo.value) +
