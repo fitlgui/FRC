@@ -1,3 +1,9 @@
+const rangeInputafautonomo = document.getElementById('rangeafautonomo');
+const rangeValueafautonomo = document.getElementById('afautonomo');
+
+const rangeInputampautonomo = document.getElementById('rangeampautonomo');
+const rangeValueampautonomo= document.getElementById('ampautonomo');
+
 const rangeInputaf = document.getElementById('rangeaf');
 const rangeValueaf = document.getElementById('af');
 
@@ -6,6 +12,14 @@ const rangeValueafc = document.getElementById('afc');
 
 const rangeInputapf = document.getElementById('rangeapf');
 const rangeValueapf = document.getElementById('apf');
+
+rangeInputafautonomo.addEventListener('input', function () {
+    rangeValueafautonomo.textContent = this.value;
+});
+
+rangeInputampautonomo.addEventListener('input', function () {
+    rangeValueampautonomo.textContent = this.value;
+});
 
 rangeInputaf.addEventListener('input', function () {
     rangeValueaf.textContent = this.value;
