@@ -19,7 +19,7 @@
                     <img src="assets/img/icocapi.png" alt="capi" width="30" height="24">
                 </div>
                 <div class="col-5">
-                    <span class="fw-bolder">Scouting Team</span>
+                    <span class="fw-bolder">Análise de Dados - Scout</span>
                 </div>
                 <div class="col">
                     <img src="assets/img/icotui.png" alt="tuiu" width="30" height="24">
@@ -31,7 +31,7 @@
                 <div class="col-8">
                     <div class="input-group">
                         <span class="input-group-text">Equipe</span>
-                        <input type="text" aria-label="First name" class="form-control">
+                        <input type="text" aria-label="First name" class="form-control" id="equipe">
                     </div>
                 </div>
                 <div class="col-4 text-cente">
@@ -129,11 +129,18 @@
                             <label class="form-check-label" for="flexSwitchCheckChecked" id="labelcoop">Não</label>
                         </div>
                     </div>
+                    <div class="col-md-4 mt-1">
+                        <span class="fw-bolder">Estacionou</span>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="checkestacionou">
+                            <label class="form-check-label" for="flexSwitchCheckChecked" id="labelestacionou">Não</label>
+                        </div>
+                    </div>
                 </div>
 
             </form>
         </div>
-        <button class="btn btn-success mt-2 mb-4" type="submit">Gravar Scout</button>
+        <button class="btn btn-success mt-2 mb-4" type="submit" id="enviar">Gravar Scout</button>
     </div>
 
 </body>

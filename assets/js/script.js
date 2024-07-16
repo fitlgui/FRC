@@ -3,6 +3,8 @@ const rangeValueafautonomo = document.getElementById('afautonomo');
 const rangeInputampautonomo = document.getElementById('rangeampautonomo');
 const rangeValueampautonomo = document.getElementById('ampautonomo');
 
+const equipe = document.getElementById('equipe')
+
 const rangeInputaf = document.getElementById('rangeaf');
 const rangeValueaf = document.getElementById('af');
 
@@ -18,17 +20,23 @@ const checksaida = document.getElementById('checksaida');
 const checkcorrente = document.getElementById('checkcorrente');
 const labelcorrente = document.getElementById('labelcorrente');
 
+const checkestacionou = document.getElementById('checkestacionou');
+const labelestacionou = document.getElementById('labelestacionou');
+
 const checktrap = document.getElementById('checktrap');
 const labeltrap = document.getElementById('labeltrap');
 
 const checkmic = document.getElementById('checkmic');
 const labelmic = document.getElementById('labelmic');
 
+const btnEnviar = document.getElementById('enviar');
+
 let zona = 0;
 let corrente = 0;
 let trap = 0;
 let mic = 0;
 let coop = 0;
+let estacionou = 0;
 
 checksaida.addEventListener('change', function () {
     if (this.checked) {
@@ -48,6 +56,17 @@ checkcorrente.addEventListener('change', function () {
     } else {
         labelcorrente.textContent = 'Não';
         corrente = 0;
+    }
+    updateTotalValue();
+});
+
+checkestacionou.addEventListener('change', function () {
+    if (this.checked) {
+        labelcorrente.textContent = 'Sim';
+        estacionou = 1;
+    } else {
+        labelcorrente.textContent = 'Não';
+        estacionou = 0;
     }
     updateTotalValue();
 });
@@ -103,6 +122,7 @@ function updateTotalValue() {
                  parseInt((rangeInputafc.value) * 5) +
                  parseInt(rangeInputapf.value) +
                  parseInt(trap) +
+                 parseInt(estacionou)+
                  parseInt(corrente) +
                  parseInt(zona) +
                  parseInt(mic);
@@ -137,3 +157,56 @@ rangeInputapf.addEventListener('input', function () {
     rangeValueapf.textContent = this.value;
     updateTotalValue();
 });
+
+// Enviar Dados
+
+async function sendData() {
+    const data = {
+        equipe: parseInt(equipe.value),
+        rangeInputafautonomo: parseInt(rangeInputafautonomo.value),
+        rangeInputampautonomo: parseInt(rangeInputampautonomo.value),
+        rangeInputaf: parseInt(rangeInputaf.value),
+        rangeInputafc: parseInt(rangeInputafc.value),
+        rangeInputapf: parseInt(rangeInputapf.value),
+        zona,
+        corrente,
+        trap,
+        mic,
+        coop,
+        estacionou,
+        totalValue
+    };
+
+    try {
+        const response = await fetch('http://localhost:3000/data', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const result = await response.json();
+        console.log('Data sent successfully:', result);
+    } catch (error) {
+        console.error('Error sending data:', error);
+    }
+}
+
+btnEnviar.addEventListener('click', () => {
+    equipe.addEventListener('change', sendData);
+    checksaida.addEventListener('change', sendData);
+    checkcorrente.addEventListener('change', sendData);
+    checkestacionou.addEventListener('change', sendData);
+    checktrap.addEventListener('change', sendData);
+    checkmic.addEventListener('change', sendData);
+    checkcoop.addEventListener('change', sendData);
+    rangeInputafautonomo.addEventListener('input', sendData);
+    rangeInputampautonomo.addEventListener('input', sendData);
+    rangeInputaf.addEventListener('input', sendData);
+    rangeInputafc.addEventListener('input', sendData);
+    rangeInputapf.addEventListener('input', sendData);
+    console.log('Dados Enviados');
+}); 
