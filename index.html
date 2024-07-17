@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="pt-br">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,9 +9,8 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body>
-    <div class="container mt-2">
+    <div class="container mt-2" id="body">
         <div class="container-fluid p-4 border border-danger border-1 rounded-2 mb-2 text-center">
             <div class="row">
                 <div class="col">
@@ -34,120 +32,100 @@
                         <input type="text" aria-label="First name" class="form-control" id="equipe">
                     </div>
                 </div>
-                <div class="col-4 text-cente">
+                <div class="col-4 text-center">
                     <span class="input-group-text" id="totalValue">0</span>
-
                 </div>
             </div>
         </div>
         <div class="container-fluid p-3 border border-danger border-1 rounded-2">
-
             <form name="" action="#" class="">
-                <!--  -->
                 <span class="fw-bolder">AUTONOMO</span>
                 <div class="row g-3 mt-2">
                     <span class="fw-bolder">Saiu da Linha</span>
                     <div class="col-md-4">
                         <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" role="switch" id="checksaida" checked>
-                            <label class="form-check-label" for="flexSwitchCheckChecked" id="labelsaida">Sim</label>
+                            <input class="form-check-input" type="checkbox" role="switch" id="checksaida">
+                            <label class="form-check-label" for="checksaida" id="labelsaida">Não</label>
                         </div>
                     </div>
                 </div>
                 <div class="row g-3 mt-3">
                     <div class="col-md-5 mt-1">
-                        <label for="customRange2" class="form-label fw-bolder">Alto Falante:</label>
-
-                        <label for="customRange1">Valor selecionado = <span id="afautonomo">0</span></label>
+                        <label for="rangeafautonomo" class="form-label fw-bolder">Alto Falante:</label>
+                        <label for="rangeafautonomo">Valor selecionado = <span id="afautonomo">0</span></label>
                         <input type="range" class="form-range" id="rangeafautonomo" min="0" max="10" value="0">
-
                     </div>
-                    <!--  -->
                     <div class="col-md-5 mt-1">
-                        <label for="customRange2" class="form-label fw-bolder">Amplificador:</label>
-
-                        <label for="customRange1">Valor selecionado = <span id="ampautonomo">0</span></label>
+                        <label for="rangeampautonomo" class="form-label fw-bolder">Amplificador:</label>
+                        <label for="rangeampautonomo">Valor selecionado = <span id="ampautonomo">0</span></label>
                         <input type="range" class="form-range" id="rangeampautonomo" min="0" max="10" value="0">
                     </div>
                 </div>
-
             </form>
         </div>
-        <!--  -->
         <div class="container-fluid p-3 border border-danger border-1 rounded-2 mt-3">
             <form name="" action="#" class="">
                 <span class="fw-bolder">TELE-OP</span>
                 <div class="row g-3 mt-3">
                     <div class="col-md-4 mt-1">
-                        <label for="customRange2" class="form-label fw-bolder">Alto Falante:</label>
-
-                        <label for="customRange1">Valor selecionado = <span id="af">0</span></label>
+                        <label for="rangeaf" class="form-label fw-bolder">Alto Falante:</label>
+                        <label for="rangeaf">Valor selecionado = <span id="af">0</span></label>
                         <input type="range" class="form-range" id="rangeaf" min="0" max="30" value="0">
                     </div>
                     <div class="col-md-4 mt-1">
-                        <label for="customRange2" class="form-label fw-bolder">Auto Falante(Amplificado):</label>
-
-                        <label for="customRange1">Valor selecionado = <span id="afc">0</span></label>
+                        <label for="rangeafc" class="form-label fw-bolder">Auto Falante(Amplificado):</label>
+                        <label for="rangeafc">Valor selecionado = <span id="afc">0</span></label>
                         <input type="range" class="form-range" id="rangeafc" min="0" max="30" value="0">
                     </div>
-                    <!--  -->
                     <div class="col-md-4 mt-1">
-                        <label for="customRange2" class="form-label fw-bolder">Amplificador:</label>
-
-                        <label for="customRange1">Valor selecionado = <span id="apf">0</span></label>
+                        <label for="rangeapf" class="form-label fw-bolder">Amplificador:</label>
+                        <label for="rangeapf">Valor selecionado = <span id="apf">0</span></label>
                         <input type="range" class="form-range" id="rangeapf" min="0" max="30" value="0">
                     </div>
                 </div>
-                <!--  -->
                 <div class="row g-3 mt-3">
                     <div class="col-md-4 mt-1">
                         <span class="fw-bolder">Corrente</span>
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" role="switch" id="checkcorrente">
-                            <label class="form-check-label" for="flexSwitchCheckChecked" id="labelcorrente">Não</label>
+                            <label class="form-check-label" for="checkcorrente" id="labelcorrente">Não</label>
                         </div>
                     </div>
-                    <!--  -->
                     <div class="col-md-4 mt-1">
                         <span class="fw-bolder">TRAP</span>
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" role="switch" id="checktrap">
-                            <label class="form-check-label" for="flexSwitchCheckChecked" id="labeltrap">Não</label>
+                            <label class="form-check-label" for="checktrap" id="labeltrap">Não</label>
                         </div>
                     </div>
                     <div class="col-md-4 mt-1">
                         <span class="fw-bolder">Microfone</span>
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" role="switch" id="checkmic">
-                            <label class="form-check-label" for="flexSwitchCheckChecked" id="labelmic">Não</label>
+                            <label class="form-check-label" for="checkmic" id="labelmic">Não</label>
                         </div>
                     </div>
                     <div class="col-md-4 mt-1">
                         <span class="fw-bolder">Coopertition</span>
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" role="switch" id="checkcoop">
-                            <label class="form-check-label" for="flexSwitchCheckChecked" id="labelcoop">Não</label>
+                            <label class="form-check-label" for="checkcoop" id="labelcoop">Não</label>
                         </div>
                     </div>
                     <div class="col-md-4 mt-1">
                         <span class="fw-bolder">Estacionou</span>
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" role="switch" id="checkestacionou">
-                            <label class="form-check-label" for="flexSwitchCheckChecked" id="labelestacionou">Não</label>
+                            <label class="form-check-label" for="checkestacionou" id="labelestacionou">Não</label>
                         </div>
                     </div>
                 </div>
-
             </form>
         </div>
-        <button class="btn btn-success mt-2 mb-4" type="submit" id="enviar">Gravar Scout</button>
+        <button class="btn btn-success mt-2 mb-4" type="button" id="enviar">Gravar Scout</button>
     </div>
-
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="assets/js/script.js"></script>
-
 </html>
