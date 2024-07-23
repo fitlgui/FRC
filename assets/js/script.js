@@ -40,6 +40,8 @@ let trap = 0;
 let mic = 0;
 let coop = 0;
 let estacionou = 0;
+let conteudo = document.getElementById('conteudo');
+let msg = '<div class="alert alert-danger" role="alert">Verifique sua conexão e tente Novamente!</div>';
 
 checksaida.addEventListener('change', function () {
     if (this.checked) {
@@ -56,9 +58,15 @@ checkcorrente.addEventListener('change', function () {
     if (this.checked) {
         labelcorrente.textContent = 'Sim';
         corrente = 1;
+        labelestacionou.textContent = 'Sim';
+        estacionou = 1;
+        checkestacionou.checked = true;
     } else {
         labelcorrente.textContent = 'Não';
+        labelestacionou.textContent = 'Não';
         corrente = 0;
+        estacionou = 0;
+        checkestacionou.checked = false;
     }
     updateTotalValue();
 });
@@ -189,14 +197,16 @@ async function sendData() {
             body: JSON.stringify(data),
         });
         if (!response.ok) {
-            throw new Error('Internet é da Sky é?');
+            throw new Error(conteudo.innerHTML = msg);        
         }
         const result = await response.json();
         console.log('Enviado com sucesso:', result);
+        conteudo.innerHTML = '<div class="alert alert-info" role="alert">Enviado Com Sucesso!</div>';
     } catch (error) {
         console.error('Deu ruim ao enviar:', error);
+        conteudo.innerHTML = '<div class="alert alert-danger" role="alert">Erro Ao Enviar, Tente Novamente!</div>';
     }
-    location.reload(); // Recarregar a página após envio
+    setTimeout(() => {location.reload();}, 5000) // Recarregar a página após envio
 }
 
 btnEnviar.addEventListener('click', sendData);
