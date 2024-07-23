@@ -4,6 +4,7 @@ const rangeInputampautonomo = document.getElementById('rangeampautonomo');
 const rangeValueampautonomo = document.getElementById('ampautonomo');
 
 const equipe = document.getElementById('equipe');
+const partida = document.getElementById('partida');
 
 const rangeInputaf = document.getElementById('rangeaf');
 const rangeValueaf = document.getElementById('af');
@@ -40,8 +41,10 @@ let trap = 0;
 let mic = 0;
 let coop = 0;
 let estacionou = 0;
-let conteudo = document.getElementById('conteudo');
-let msg = '<div class="alert alert-danger" role="alert">Verifique sua conexão e tente Novamente!</div>';
+
+// Pop - Up
+let erro = document.getElementById('erro');
+let sucesso = document.getElementById('sucesso');
 
 checksaida.addEventListener('change', function () {
     if (this.checked) {
@@ -173,6 +176,7 @@ rangeInputapf.addEventListener('input', function () {
 async function sendData() {
     const data = {
         equipe: equipe.value,
+        partida: partida.value,
         rangeInputafautonomo: parseInt(rangeInputafautonomo.value),
         rangeInputampautonomo: parseInt(rangeInputampautonomo.value),
         rangeInputaf: parseInt(rangeInputaf.value),
@@ -197,16 +201,17 @@ async function sendData() {
             body: JSON.stringify(data),
         });
         if (!response.ok) {
-            throw new Error(conteudo.innerHTML = msg);        
+            throw new Error('Erro de internet');        
         }
         const result = await response.json();
         console.log('Enviado com sucesso:', result);
-        conteudo.innerHTML = '<div class="alert alert-info" role="alert">Enviado Com Sucesso!</div>';
+        sucesso = sucesso.show();
     } catch (error) {
         console.error('Deu ruim ao enviar:', error);
-        conteudo.innerHTML = '<div class="alert alert-danger" role="alert">Erro Ao Enviar, Tente Novamente!</div>';
-    }
-    setTimeout(() => {location.reload();}, 5000) // Recarregar a página após envio
+        erro = erro.show();   
+    }    setTimeout(() => {
+        location.reload();
+    }, 7000) // Recarregar a página após envio
 }
 
 btnEnviar.addEventListener('click', sendData);

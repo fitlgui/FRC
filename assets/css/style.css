@@ -2,3 +2,22 @@
     display: inline-block;
     margin-right: 0.6rem;
 }
+
+dialog{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    color: white;
+    width: 300px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 17px;
+    top: 45%;
+}
+
+dialog, #sucesso {
+    background-color: lightskyblue;
+}
+
+dialog, #erro {
+    background-color: red;
+}
