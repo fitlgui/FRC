@@ -78,8 +78,8 @@ checksaida.addEventListener('change', function () {
     updateTotalValue();
 });
 
-checkcorrente.addEventListener('change', function () {
-    if (this.checked) {
+checkcorrente.addEventListener('change', () => {
+    if (checkcorrente.checked) {
         labelcorrente.textContent = 'Sim';
         corrente = 1;
         labelestacionou.textContent = 'Sim';
