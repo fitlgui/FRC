@@ -2,6 +2,9 @@
 const equipe = document.getElementById('equipe');
 const partida = document.getElementById('partida');
 
+// Aliança
+const alianca = document.getElementById('alianca')
+
 // Escolha - Notas Auto-Falante / Autônomo
 const rangeInputafautonomo = document.getElementById('rangeafautonomo');
 const rangeValueafautonomo = document.getElementById('afautonomo');
@@ -210,6 +213,7 @@ rangeInputapf.addEventListener('input', function () {
             mic,
             coop,
             estacionou,
+            alianca,
             Key,
             totalValue
         };
