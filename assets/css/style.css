@@ -21,3 +21,7 @@ dialog, #sucesso {
 dialog, #erro {
     background-color: red;
 }
+
+dialog #teste {
+    background-color: darkcyan;
+}

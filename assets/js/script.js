@@ -1,40 +1,56 @@
-const rangeInputafautonomo = document.getElementById('rangeafautonomo');
-const rangeValueafautonomo = document.getElementById('afautonomo');
-const rangeInputampautonomo = document.getElementById('rangeampautonomo');
-const rangeValueampautonomo = document.getElementById('ampautonomo');
-
+// Equipe
 const equipe = document.getElementById('equipe');
 const partida = document.getElementById('partida');
 
+// Escolha - Notas Auto-Falante / Autônomo
+const rangeInputafautonomo = document.getElementById('rangeafautonomo');
+const rangeValueafautonomo = document.getElementById('afautonomo');
+
+// Escolha - Notas Amplificador / Autônomo
+const rangeInputampautonomo = document.getElementById('rangeampautonomo');
+const rangeValueampautonomo = document.getElementById('ampautonomo');
+
+// Escolha - Notas Auto-Falante / Tele-OP
 const rangeInputaf = document.getElementById('rangeaf');
 const rangeValueaf = document.getElementById('af');
 
+// Escolha - Notas Auto-Falante Amplificado / Tele-OP
 const rangeInputafc = document.getElementById('rangeafc');
 const rangeValueafc = document.getElementById('afc');
 
+// Escolha - Notas Amplificador / Tele-OP
 const rangeInputapf = document.getElementById('rangeapf');
 const rangeValueapf = document.getElementById('apf');
 
+// Botão Saida Da Zona
 const labelsaida = document.getElementById('labelsaida');
 const checksaida = document.getElementById('checksaida');
 
+// Botão Corrente
 const checkcorrente = document.getElementById('checkcorrente');
 const labelcorrente = document.getElementById('labelcorrente');
 
+// Botão Estacionou
 const checkestacionou = document.getElementById('checkestacionou');
 const labelestacionou = document.getElementById('labelestacionou');
 
+// Botão Trap
 const checktrap = document.getElementById('checktrap');
 const labeltrap = document.getElementById('labeltrap');
 
+// Botão Microfone
 const checkmic = document.getElementById('checkmic');
 const labelmic = document.getElementById('labelmic');
 
+// Botão Coopertition
 const checkcoop = document.getElementById('checkcoop');
 const labelcoop = document.getElementById('labelcoop');
 
+// Botão de Enviar Dados
 const btnEnviar = document.getElementById('enviar');
 
+
+// Variáveis de pontuação
 let zona = 0;
 let corrente = 0;
 let trap = 0;
@@ -45,6 +61,11 @@ let estacionou = 0;
 // Pop - Up
 let erro = document.getElementById('erro');
 let sucesso = document.getElementById('sucesso');
+
+// Segurança
+let Key = document.getElementById('key');
+
+// Verificação para ver se botões estão selecionados
 
 checksaida.addEventListener('change', function () {
     if (this.checked) {
@@ -118,6 +139,7 @@ checkcoop.addEventListener('change', function () {
     updateTotalValue();
 });
 
+
 // Set initial label text based on checkbox state
 if (checkmic.checked) {
     labelmic.textContent = 'Sim';
@@ -173,45 +195,47 @@ rangeInputapf.addEventListener('input', function () {
 });
 
 // Enviar Dados
-async function sendData() {
-    const data = {
-        equipe: equipe.value,
-        partida: partida.value,
-        rangeInputafautonomo: parseInt(rangeInputafautonomo.value),
-        rangeInputampautonomo: parseInt(rangeInputampautonomo.value),
-        rangeInputaf: parseInt(rangeInputaf.value),
-        rangeInputafc: parseInt(rangeInputafc.value),
-        rangeInputapf: parseInt(rangeInputapf.value),
-        zona,
-        corrente,
-        trap,
-        mic,
-        coop,
-        estacionou,
-        totalValue
-    };
+    async function sendData() {
+        const data = {
+            equipe: equipe.value,
+            partida: partida.value,
+            rangeInputafautonomo: parseInt(rangeInputafautonomo.value),
+            rangeInputampautonomo: parseInt(rangeInputampautonomo.value),
+            rangeInputaf: parseInt(rangeInputaf.value),
+            rangeInputafc: parseInt(rangeInputafc.value),
+            rangeInputapf: parseInt(rangeInputapf.value),
+            zona,
+            corrente,
+            trap,
+            mic,
+            coop,
+            estacionou,
+            Key,
+            totalValue
+        };
 
-    try {
-        const response = await fetch('https://scout-mt.onrender.com/data', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'x-api-key': 'PAOCOMCARNE123$'
-            },
-            body: JSON.stringify(data),
-        });
-        if (!response.ok) {
-            throw new Error('Erro de internet');        
-        }
-        const result = await response.json();
-        console.log('Enviado com sucesso:', result);
-        sucesso = sucesso.show();
-    } catch (error) {
-        console.error('Deu ruim ao enviar:', error);
-        erro = erro.show();   
-    }    setTimeout(() => {
-        location.reload();
-    }, 7000) // Recarregar a página após envio
-}
-
-btnEnviar.addEventListener('click', sendData);
+        try {
+            const response = await fetch('https://scout-mt.onrender.com/data', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'x-api-key': 'PAOCOMCARNE123$',
+                    'key': Key.value
+                },
+                body: JSON.stringify(data),
+            });
+            if (!response.ok) {
+                throw new Error('Erro de internet');        
+            }
+            const result = await response.json();
+            console.log('Enviado com sucesso:', result);
+            sucesso = sucesso.show();
+        } catch (error) {
+            console.error('Deu ruim ao enviar:', error);
+            erro = erro.show();   
+        }    setTimeout(() => {
+            location.reload();
+        }, 7000) // Recarregar a página após envio
+    }
+    
+    btnEnviar.addEventListener('click', sendData);
