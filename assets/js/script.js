@@ -213,7 +213,7 @@ rangeInputapf.addEventListener('input', function () {
             mic,
             coop,
             estacionou,
-            alianca,
+            alianca: alianca.value,
             Key,
             totalValue
         };
