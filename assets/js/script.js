@@ -1,7 +1,15 @@
 // Elementos da DOM
 const equipe = document.getElementById('equipe');
 const partida = document.getElementById('partida');
-const alianca = document.getElementById('alianca');
+
+const alianca = () => {
+    if (document.getElementById('Blue').checked == true){
+        return 'Blue';
+    } else {
+        return 'Red';
+    }
+}
+
 const resultado = () => {
     if (document.getElementById('vitoria').checked == true){
         return 'Vitória';
