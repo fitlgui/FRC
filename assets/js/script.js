@@ -61,7 +61,7 @@ let estacionou = 0;
 
 // Função para atualizar o valor total
 function updateTotalValue() {
-    const ValorTotal = parseInt(rangeInputafautonomo.value) * 5 +
+    let ValorTotal = parseInt(rangeInputafautonomo.value) * 5 +
                      parseInt(rangeInputampautonomo.value) * 2 +
                      parseInt(rangeInputaf.value) * 2 +
                      parseInt(rangeInputafc.value) * 5 +
