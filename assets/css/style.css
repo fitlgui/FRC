@@ -35,9 +35,9 @@ dialog #teste {
 }
 
 .vitoria {
-    background-color: green;
+    color: green;
 }
 
 .derrota {
-    background-color: red;
+        color: red;
 }
