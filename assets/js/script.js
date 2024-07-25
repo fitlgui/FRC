@@ -166,8 +166,8 @@ async function sendData() {
         estacionou,
         alianca: alianca.value,
         Key: Key.value,
-        totalValue: totalValue,
-        rankingPoints
+        totalValue: totalValue.value,
+        rankingPoints: rankingPoints.value
     };
 
     try {
