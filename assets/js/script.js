@@ -61,16 +61,16 @@ let estacionou = 0;
 
 // Função para atualizar o valor total
 function updateTotalValue() {
-    const totalValue = parseInt(rangeInputafautonomo.value) * 5 +
+    const ValorTotal = parseInt(rangeInputafautonomo.value) * 5 +
                      parseInt(rangeInputampautonomo.value) * 2 +
                      parseInt(rangeInputaf.value) * 2 +
                      parseInt(rangeInputafc.value) * 5 +
                      parseInt(rangeInputapf.value) +
                      trap + corrente + estacionou + zona + mic;
-    totalValueSpan.textContent = coop !== 0 ? `Pontos: ${totalValue} e 1 Coop` : `Pontos: ${totalValue}`;
+    totalValueSpan.textContent = coop !== 0 ? `Pontos: ${ValorTotal} e 1 Coop` : `Pontos: ${ValorTotal}`;
 }
 
-console.log(totalValue);
+console.log(ValorTotal);
 
 // Funções de manipulação dos checkboxes
 checksaida.addEventListener('change', function () {
@@ -175,7 +175,7 @@ async function sendData() {
         estacionou,
         alianca: alianca.value,
         Key: Key.value,
-        totalValue: totalValue,
+        totalValue: ValorTotal,
         rankingPoints: parseInt(rankingPoints.value)
     };
 
