@@ -2,7 +2,16 @@
 const equipe = document.getElementById('equipe');
 const partida = document.getElementById('partida');
 const alianca = document.getElementById('alianca');
-const resultado = document.getElementById('resultado');
+const resultado = () => {
+    if (document.getElementById('vitoria').checked == true){
+        return 'Vitória';
+    } else if(document.getElementById('empate').checked == true){
+        return 'Empate';
+    } else {
+        return 'Derrota';
+    }
+}
+
 
 const rangeInputafautonomo = document.getElementById('rangeafautonomo');
 const rangeValueafautonomo = document.getElementById('afautonomo');
