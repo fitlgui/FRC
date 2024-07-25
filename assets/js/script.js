@@ -175,7 +175,7 @@ async function sendData() {
         coop,
         estacionou,
         resultado: resultado(),
-        alianca: alianca,
+        alianca: alianca(),
         Key: Key.value,
         totalValue: ValTotal,
         rankingPoints: rankingPoints 
