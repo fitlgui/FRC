@@ -70,6 +70,8 @@ function updateTotalValue() {
     totalValueSpan.textContent = coop !== 0 ? `Pontos: ${totalValue} e 1 Coop` : `Pontos: ${totalValue}`;
 }
 
+console.log(totalValue);
+
 // Funções de manipulação dos checkboxes
 checksaida.addEventListener('change', function () {
     zona = this.checked ? 2 : 0;
