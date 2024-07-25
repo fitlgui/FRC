@@ -153,21 +153,21 @@ async function sendData() {
     const data = {
         equipe: equipe.value,
         partida: parseInt(partida.value),
-        rangeInputafautonomo: parseInt(rangeInputafautonomo.value),
-        rangeInputampautonomo: parseInt(rangeInputampautonomo.value),
-        rangeInputaf: parseInt(rangeInputaf.value),
-        rangeInputafc: parseInt(rangeInputafc.value),
+        rangeInputafautonomo: parseInt((rangeInputafautonomo.value) * 5),
+        rangeInputampautonomo: parseInt((rangeInputampautonomo.value) * 2),
+        rangeInputaf: parseInt((rangeInputaf.value) * 2),
+        rangeInputafc: parseInt((rangeInputafc.value) * 5),
         rangeInputapf: parseInt(rangeInputapf.value),
         zona,
         corrente,
-        trap,
+        trap: parseInt((trap) * 5),
         mic,
         coop,
         estacionou,
         alianca: alianca.value,
         Key: Key.value,
-        totalValue: totalValue.value,
-        rankingPoints: rankingPoints.value
+        totalValue: parseInt(totalValue.value),
+        rankingPoints: parseInt(rankingPoints.value)
     };
 
     try {
