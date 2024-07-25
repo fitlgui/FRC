@@ -33,3 +33,11 @@ dialog #teste {
 .alianca-azul {
     color: blue;
 }
+
+.vitoria {
+    background-color: green;
+}
+
+.derrota {
+    background-color: red;
+}
