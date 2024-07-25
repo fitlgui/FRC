@@ -25,3 +25,19 @@ dialog, #erro {
 dialog #teste {
     background-color: darkcyan;
 }
+
+.alianca-vermelha {
+    color: red;
+}
+
+.alianca-azul {
+    color: blue;
+}
+
+.vitoria {
+    color: green;
+}
+
+.derrota {
+    color: red;
+}
