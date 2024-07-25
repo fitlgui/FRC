@@ -68,9 +68,8 @@ function updateTotalValue() {
                      parseInt(rangeInputapf.value) +
                      trap + corrente + estacionou + zona + mic;
     totalValueSpan.textContent = coop !== 0 ? `Pontos: ${ValorTotal} e 1 Coop` : `Pontos: ${ValorTotal}`;
+    console.log(ValorTotal);
 }
-
-console.log(ValorTotal);
 
 // Funções de manipulação dos checkboxes
 checksaida.addEventListener('change', function () {
