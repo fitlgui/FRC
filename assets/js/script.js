@@ -68,7 +68,6 @@ function updateTotalValue() {
                      parseInt(rangeInputapf.value) +
                      trap + corrente + estacionou + zona + mic;
     totalValueSpan.textContent = coop !== 0 ? `Pontos: ${ValorTotal} e 1 Coop` : `Pontos: ${ValorTotal}`;
-    console.log(ValorTotal);
 }
 
 // Funções de manipulação dos checkboxes
@@ -151,6 +150,13 @@ rangeInputapf.addEventListener('input', function () {
 // Função para enviar dados
 async function sendData() {
     
+    const ValTotal = (parseInt(rangeInputafautonomo.value) * 5 +
+    parseInt(rangeInputampautonomo.value) * 2 +
+    parseInt(rangeInputaf.value) * 2 +
+    parseInt(rangeInputafc.value) * 5 +
+    parseInt(rangeInputapf.value) +
+    trap + corrente + estacionou + zona + mic); 
+
     let rankingPoints = 0;
     if (resultado.textContent === 'Vitória') {
         rankingPoints = 2;
@@ -174,7 +180,7 @@ async function sendData() {
         estacionou,
         alianca: alianca.value,
         Key: Key.value,
-        totalValue: ValorTotal,
+        totalValue: ValTotal,
         rankingPoints: parseInt(rankingPoints.value)
     };
 
