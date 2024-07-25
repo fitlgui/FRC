@@ -154,9 +154,9 @@ async function sendData() {
     const ValTotal = updateTotalValue();
 
     let rankingPoints = 0;
-    if (resultado.textContent === 'Vitória') {
+    if (document.getElementById('vitoria').checked === true) {
         rankingPoints = 2;
-    } else if (resultado.textContent === 'Empate') {
+    } else if (document.getElementById('empate').checked === true) {
         rankingPoints = 1;
     }
 
@@ -174,7 +174,8 @@ async function sendData() {
         mic,
         coop,
         estacionou,
-        alianca: alianca.value,
+        resultado: resultado(),
+        alianca: alianca,
         Key: Key.value,
         totalValue: ValTotal,
         rankingPoints: rankingPoints 
