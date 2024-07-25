@@ -61,7 +61,7 @@ let estacionou = 0;
 
 // Função para atualizar o valor total
 function updateTotalValue() {
-    let totalValue = parseInt(rangeInputafautonomo.value) * 5 +
+    const totalValue = parseInt(rangeInputafautonomo.value) * 5 +
                      parseInt(rangeInputampautonomo.value) * 2 +
                      parseInt(rangeInputaf.value) * 2 +
                      parseInt(rangeInputafc.value) * 5 +
@@ -149,6 +149,7 @@ rangeInputapf.addEventListener('input', function () {
 
 // Função para enviar dados
 async function sendData() {
+    
     let rankingPoints = 0;
     if (resultado.textContent === 'Vitória') {
         rankingPoints = 2;
@@ -172,7 +173,7 @@ async function sendData() {
         estacionou,
         alianca: alianca.value,
         Key: Key.value,
-        totalValue: parseInt(totalValue.value),
+        totalValue: totalValue,
         rankingPoints: parseInt(rankingPoints.value)
     };
 
