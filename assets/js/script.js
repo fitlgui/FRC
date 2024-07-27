@@ -31,11 +31,7 @@ const rangeInputafc = document.getElementById('rangeafc');
 const rangeValueafc = document.getElementById('afc');
 const rangeInputapf = document.getElementById('rangeapf');
 const rangeValueapf = document.getElementById('apf');
-
-const checkfalta = document.getElementById('checkfalta');
-const labelfalta = document.getElementById('labelfalta');
-const checkfaltatec = document.getElementById('checkfaltatec');
-const labelfaltatec = document.getElementById('labelfaltatec');
+const falta = parseInt(document.getElementById('falta'));
 const labelsaida = document.getElementById('labelsaida');
 const checksaida = document.getElementById('checksaida');
 const checkcorrente = document.getElementById('checkcorrente');
@@ -63,8 +59,6 @@ let trap = 0;
 let mic = 0;
 let coop = 0;
 let estacionou = 0;
-let falta = 0;
-let faltatec = 0;
 
 // Função para atualizar o valor total
 function updateTotalValue() {
@@ -73,7 +67,7 @@ function updateTotalValue() {
                      parseInt(rangeInputaf.value) * 2 +
                      parseInt(rangeInputafc.value) * 5 +
                      parseInt(rangeInputapf.value) +
-                     trap + corrente + estacionou + zona + mic) - ((falta * -1) + (faltatec * -1));
+                     trap + corrente + estacionou + zona + mic);
     totalValueSpan.textContent = coop !== 0 ? `Pontos: ${ValorTotal} e 1 Coop` : `Pontos: ${ValorTotal}`;
     return ValorTotal;
 }
@@ -129,20 +123,6 @@ checkcoop.addEventListener('change', function () {
     updateTotalValue();
 });
 
-
-checkfalta.addEventListener('change', function () {
-    falta = this.checked ? -2 : 0;
-    labelfalta.textContent = this.checked ? 'Sim' : 'Não';
-    updateTotalValue();
-});
-
-
-checkfaltatec.addEventListener('change', function () {
-    faltatec = this.checked ? -5 : 0;
-    labelfaltatec.textContent = this.checked ? 'Sim' : 'Não';
-    updateTotalValue();
-});
-
 // Atualizar valores dos ranges
 rangeInputafautonomo.addEventListener('input', function () {
     rangeValueafautonomo.textContent = this.value;
@@ -174,7 +154,7 @@ async function sendData() {
     
     btnEnviar.addEventListener('click', tempo);
 
-    const ValTotal = updateTotalValue();
+    const ValTotal = updateTotalValue() - falta;
 
     let rankingPoints = 0;
     if (document.getElementById('vitoria').checked === true) {
@@ -197,6 +177,7 @@ async function sendData() {
         mic,
         coop,
         estacionou,
+        falta,
         resultado: resultado(),
         alianca: alianca(),
         Key: Key.value,
