@@ -157,7 +157,7 @@ const tempo = setTimeout(() => {
 // Função para enviar dados
 async function sendData() {
     
-    btnEnviar.addEventListener('click', tempo());
+    btnEnviar.addEventListener('click', tempo);
 
     const ValTotal = updateTotalValue();
 
