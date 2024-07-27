@@ -32,6 +32,10 @@ const rangeValueafc = document.getElementById('afc');
 const rangeInputapf = document.getElementById('rangeapf');
 const rangeValueapf = document.getElementById('apf');
 
+const checkfalta = document.getElementById('checkfalta');
+const labelfalta = document.getElementById('labelfalta');
+const checkfaltatec = document.getElementById('checkfaltatec');
+const labelfaltatec = document.getElementById('labelfaltatec');
 const labelsaida = document.getElementById('labelsaida');
 const checksaida = document.getElementById('checksaida');
 const checkcorrente = document.getElementById('checkcorrente');
@@ -49,8 +53,8 @@ const btnEnviar = document.getElementById('enviar');
 const totalValueSpan = document.getElementById('totalValue');
 const erro = document.getElementById('erro');
 const sucesso = document.getElementById('sucesso');
-let aguarde = document.getElementById('aguarde');
 const Key = document.getElementById('key');
+
 
 // Variáveis de pontuação
 let zona = 0;
@@ -59,15 +63,17 @@ let trap = 0;
 let mic = 0;
 let coop = 0;
 let estacionou = 0;
+let falta = 0;
+let faltatec = 0;
 
 // Função para atualizar o valor total
 function updateTotalValue() {
-    let ValorTotal = parseInt(rangeInputafautonomo.value) * 5 +
+    let ValorTotal = (parseInt(rangeInputafautonomo.value) * 5 +
                      parseInt(rangeInputampautonomo.value) * 2 +
                      parseInt(rangeInputaf.value) * 2 +
                      parseInt(rangeInputafc.value) * 5 +
                      parseInt(rangeInputapf.value) +
-                     trap + corrente + estacionou + zona + mic;
+                     trap + corrente + estacionou + zona + mic) - (falta + faltatec);
     totalValueSpan.textContent = coop !== 0 ? `Pontos: ${ValorTotal} e 1 Coop` : `Pontos: ${ValorTotal}`;
     return ValorTotal;
 }
@@ -119,6 +125,20 @@ checkmic.addEventListener('change', function () {
 
 checkcoop.addEventListener('change', function () {
     coop = this.checked ? 1 : 0;
+    labelcoop.textContent = this.checked ? 'Sim' : 'Não';
+    updateTotalValue();
+});
+
+
+checkfalta.addEventListener('change', function () {
+    falta = this.checked ? -2 : 0;
+    labelcoop.textContent = this.checked ? 'Sim' : 'Não';
+    updateTotalValue();
+});
+
+
+checkfaltatec.addEventListener('change', function () {
+    faltatec = this.checked ? -5 : 0;
     labelcoop.textContent = this.checked ? 'Sim' : 'Não';
     updateTotalValue();
 });
