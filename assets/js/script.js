@@ -149,12 +149,15 @@ rangeInputapf.addEventListener('input', function () {
     updateTotalValue();
 });
 
+// função Tempo
+const tempo = setTimeout(() => {
+    aguarde.show();
+}, 3000)
+
 // Função para enviar dados
 async function sendData() {
     
-    btnEnviar.addEventListener('click', setTimeout(() => {
-        aguarde.show();
-    }, 3000));
+    btnEnviar.addEventListener('click', tempo());
 
     const ValTotal = updateTotalValue();
 
