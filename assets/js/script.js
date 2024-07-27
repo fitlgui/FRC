@@ -150,9 +150,11 @@ rangeInputapf.addEventListener('input', function () {
 });
 
 // função Tempo
-const tempo = setTimeout(() => {
-    aguarde.show();
-}, 3000)
+function tempo(){ 
+    setTimeout(() => {
+        aguarde.show();
+    }, 3000)
+}
 
 // Função para enviar dados
 async function sendData() {
@@ -218,4 +220,4 @@ async function sendData() {
 }
 
 // Adicionar evento ao botão de envio
-btnEnviar.addEventListener('click', sendData);
+btnEnviar.addEventListener('click', sendData, tempo);
