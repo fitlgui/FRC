@@ -132,14 +132,14 @@ checkcoop.addEventListener('change', function () {
 
 checkfalta.addEventListener('change', function () {
     falta = this.checked ? -2 : 0;
-    labelcoop.textContent = this.checked ? 'Sim' : 'Não';
+    labelfalta.textContent = this.checked ? 'Sim' : 'Não';
     updateTotalValue();
 });
 
 
 checkfaltatec.addEventListener('change', function () {
     faltatec = this.checked ? -5 : 0;
-    labelcoop.textContent = this.checked ? 'Sim' : 'Não';
+    labelfaltatec.textContent = this.checked ? 'Sim' : 'Não';
     updateTotalValue();
 });
 
