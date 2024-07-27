@@ -151,8 +151,6 @@ rangeInputapf.addEventListener('input', function () {
 
 // Função para enviar dados
 async function sendData() {
-    
-    btnEnviar.addEventListener('click', tempo);
 
     const ValTotal = updateTotalValue() - falta;
 
