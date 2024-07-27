@@ -152,11 +152,10 @@ rangeInputapf.addEventListener('input', function () {
 // Função para enviar dados
 async function sendData() {
     
-    btnEnviar = () => {
-        setTimeout(() => {
-            aguarde.show();
-        }, 3000)};
-
+    btnEnviar.addEventListener('click', setTimeout(() => {
+        aguarde.show();
+    }, 3000));
+    
     const ValTotal = updateTotalValue();
 
     let rankingPoints = 0;
