@@ -158,7 +158,9 @@ rangeInputapf.addEventListener('input', function () {
 
 // Função para enviar dados
 async function sendData() {
-    
+
+    alert('Aguarde a resposta do servidor!')
+
     const ValTotal = updateTotalValue() - falta;
 
     let rankingPoints = 0;
