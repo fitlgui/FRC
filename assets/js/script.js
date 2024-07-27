@@ -149,13 +149,6 @@ rangeInputapf.addEventListener('input', function () {
     updateTotalValue();
 });
 
-// função Tempo
-function tempo(){ 
-    setTimeout(() => {
-        aguarde.show();
-    }, 1500)
-}
-
 // Função para enviar dados
 async function sendData() {
     
