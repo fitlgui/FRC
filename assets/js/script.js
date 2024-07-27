@@ -153,7 +153,7 @@ rangeInputapf.addEventListener('input', function () {
 function tempo(){ 
     setTimeout(() => {
         aguarde.show();
-    }, 3000)
+    }, 1500)
 }
 
 // Função para enviar dados
