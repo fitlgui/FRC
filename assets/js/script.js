@@ -220,4 +220,7 @@ async function sendData() {
 }
 
 // Adicionar evento ao botão de envio
-btnEnviar.addEventListener('click', sendData, tempo);
+btnEnviar.addEventListener('click', () => {
+    sendData();
+    tempo();
+});
