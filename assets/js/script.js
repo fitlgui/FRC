@@ -73,7 +73,7 @@ function updateTotalValue() {
                      parseInt(rangeInputaf.value) * 2 +
                      parseInt(rangeInputafc.value) * 5 +
                      parseInt(rangeInputapf.value) +
-                     trap + corrente + estacionou + zona + mic) - (falta + faltatec);
+                     trap + corrente + estacionou + zona + mic) + (-falta + -faltatec);
     totalValueSpan.textContent = coop !== 0 ? `Pontos: ${ValorTotal} e 1 Coop` : `Pontos: ${ValorTotal}`;
     return ValorTotal;
 }
