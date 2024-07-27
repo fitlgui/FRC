@@ -34,7 +34,7 @@ const rangeValueapf = document.getElementById('apf');
 
 const falta = () => {
     if(document.getElementById('falta')){
-    return document.getElementById('falta')
+    return document.getElementById('falta').value;
 } else{
     return 0;
 }};
