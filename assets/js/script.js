@@ -49,6 +49,7 @@ const btnEnviar = document.getElementById('enviar');
 const totalValueSpan = document.getElementById('totalValue');
 const erro = document.getElementById('erro');
 const sucesso = document.getElementById('sucesso');
+const aguarde = document.getElementById('aguarde');
 const Key = document.getElementById('key');
 
 // Variáveis de pontuação
@@ -151,6 +152,11 @@ rangeInputapf.addEventListener('input', function () {
 // Função para enviar dados
 async function sendData() {
     
+    btnEnviar = () => {
+        setTimeout(() => {
+            aguarde.show();
+        }, 3000)};
+
     const ValTotal = updateTotalValue();
 
     let rankingPoints = 0;

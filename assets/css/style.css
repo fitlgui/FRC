@@ -22,8 +22,8 @@ dialog, #erro {
     background-color: red;
 }
 
-dialog #teste {
-    background-color: darkcyan;
+dialog #aguarde {
+    background-color: rgb(213, 226, 21);
 }
 
 .alianca-vermelha {
