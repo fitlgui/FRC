@@ -34,7 +34,7 @@ const rangeValueapf = document.getElementById('apf');
 
 const falta = () => {
     if(document.getElementById('falta')){
-    return document.getElementById('falta').value;
+    return parseInt(document.getElementById('falta').value);
 } else{
     return 0;
 }};
@@ -158,10 +158,8 @@ rangeInputapf.addEventListener('input', function () {
 
 // Função para enviar dados
 async function sendData() {
-    
-    btnEnviar.addEventListener('click', () => {
-        alert('aguarde a resposta do servidor');
-    });
+
+    alert('aguarde a resposta do servidor');
 
     const ValTotal = updateTotalValue() - falta;
 
