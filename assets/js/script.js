@@ -31,7 +31,14 @@ const rangeInputafc = document.getElementById('rangeafc');
 const rangeValueafc = document.getElementById('afc');
 const rangeInputapf = document.getElementById('rangeapf');
 const rangeValueapf = document.getElementById('apf');
-const falta = parseInt(document.getElementById('falta'));
+
+const falta = () => {
+    if(document.getElementById('falta')){
+    return document.getElementById('falta')
+} else{
+    return 0;
+}};
+
 const labelsaida = document.getElementById('labelsaida');
 const checksaida = document.getElementById('checksaida');
 const checkcorrente = document.getElementById('checkcorrente');
@@ -179,7 +186,7 @@ async function sendData() {
         mic,
         coop,
         estacionou,
-        falta,
+        falta: falta(),
         resultado: resultado(),
         alianca: alianca(),
         Key: Key.value,
