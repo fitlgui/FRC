@@ -191,7 +191,7 @@ async function sendData() {
         resultado: resultado(),
         alianca: alianca(),
         Key: Key.value,
-        totalValue: parseInt(ValTotal),
+        totalValue: parseInt(ValTotal()),
         rankingPoints: rankingPoints 
     };
 
