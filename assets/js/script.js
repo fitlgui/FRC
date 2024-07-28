@@ -161,10 +161,10 @@ async function sendData() {
     alert('Aguarde a resposta do servidor!')
 
     // Example: Remove unnecessary parseInt() conversion
-    const ValTotal = () => {
-        const total = updateTotalValue() - falta;
-        return total;
-    }
+const ValTotal = () => {
+    const total = updateTotalValue() - falta();
+    return total;
+}
 
     let rankingPoints = 0;
     if (document.getElementById('vitoria').checked === true) {
@@ -191,7 +191,7 @@ async function sendData() {
         resultado: resultado(),
         alianca: alianca(),
         Key: Key.value,
-        totalValue: updateTotalValue(),
+        totalValue: ValTotal(),
         rankingPoints: rankingPoints 
     };
 
