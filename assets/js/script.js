@@ -162,8 +162,12 @@ async function sendData() {
 
     // Example: Remove unnecessary parseInt() conversion
 const ValTotal = () => {
+    if(falta() != 0){
     const total = updateTotalValue() - falta();
     return total;
+    } else {
+        return updateTotalValue();
+    }
 }
 
     let rankingPoints = 0;
