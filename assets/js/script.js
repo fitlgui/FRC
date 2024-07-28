@@ -32,12 +32,11 @@ const rangeValueafc = document.getElementById('afc');
 const rangeInputapf = document.getElementById('rangeapf');
 const rangeValueapf = document.getElementById('apf');
 
+// Add a null check to prevent potential null pointer exception
 const falta = () => {
-    if(document.getElementById('falta')){
-    return parseInt(document.getElementById('falta').value);
-} else{
-    return parseInt(0);
-}};
+    const faltaElement = document.getElementById('falta');
+    return faltaElement ? parseInt(faltaElement.value) : 0;
+};
 
 const labelsaida = document.getElementById('labelsaida');
 const checksaida = document.getElementById('checksaida');
@@ -161,8 +160,9 @@ async function sendData() {
 
     alert('Aguarde a resposta do servidor!')
 
+    // Example: Remove unnecessary parseInt() conversion
     const ValTotal = () => {
-        const total = parseInt(updateTotalValue() - falta);
+        const total = updateTotalValue() - falta;
         return total;
     }
 
