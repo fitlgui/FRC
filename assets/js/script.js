@@ -36,7 +36,7 @@ const falta = () => {
     if(document.getElementById('falta')){
     return parseInt(document.getElementById('falta').value);
 } else{
-    return 0;
+    return parseInt(0);
 }};
 
 const labelsaida = document.getElementById('labelsaida');
