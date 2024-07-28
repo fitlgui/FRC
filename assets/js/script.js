@@ -161,7 +161,10 @@ async function sendData() {
 
     alert('Aguarde a resposta do servidor!')
 
-    const ValTotal = parseInt(updateTotalValue() - falta);
+    const ValTotal = () => {
+        const total = parseInt(updateTotalValue() - falta);
+        return total;
+    }
 
     let rankingPoints = 0;
     if (document.getElementById('vitoria').checked === true) {
