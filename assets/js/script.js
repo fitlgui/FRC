@@ -161,7 +161,7 @@ async function sendData() {
 
     alert('Aguarde a resposta do servidor!')
 
-    const ValTotal = updateTotalValue() - falta;
+    const ValTotal = parseInt(updateTotalValue() - falta);
 
     let rankingPoints = 0;
     if (document.getElementById('vitoria').checked === true) {
