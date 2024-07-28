@@ -156,18 +156,6 @@ rangeInputapf.addEventListener('input', function () {
     updateTotalValue();
 });
 
-const totalAutonomo = () => {
-        parseInt((rangeInputafautonomo.value) * 5) +
-        parseInt((rangeInputampautonomo.value) * 2) +
-        zona
-}
-
-const totalTeleop = () => {
-    parseInt((rangeInputaf.value) * 2) +
-    parseInt((rangeInputafc.value) * 5) +
-    parseInt(rangeInputapf.value)
-}
-
 // Função para enviar dados
 async function sendData() {
 
@@ -196,8 +184,6 @@ async function sendData() {
         mic,
         coop,
         estacionou,
-        autonomo_total: totalAutonomo(),
-        teleop_total: totalTeleop(),
         falta: falta(),
         resultado: resultado(),
         alianca: alianca(),
