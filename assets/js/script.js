@@ -35,7 +35,7 @@ const rangeValueapf = document.getElementById('apf');
 // Add a null check to prevent potential null pointer exception
 const falta = () => {
     const faltaElement = document.getElementById('falta');
-    return faltaElement ? parseInt(faltaElement.value) : 0;
+    return faltaElement != null ? parseInt(faltaElement.value) : 0;
 };
 
 const labelsaida = document.getElementById('labelsaida');
