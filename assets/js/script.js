@@ -38,6 +38,8 @@ const falta = () => {
     return faltaElement != null ? parseInt(faltaElement.value) : 0;
 };
 
+console.log(falta());
+
 const labelsaida = document.getElementById('labelsaida');
 const checksaida = document.getElementById('checksaida');
 const checkcorrente = document.getElementById('checkcorrente');
@@ -169,6 +171,7 @@ const ValTotal = () => {
         return updateTotalValue();
     }
 }
+    console.log(ValTotal);
 
     let rankingPoints = 0;
     if (document.getElementById('vitoria').checked === true) {
