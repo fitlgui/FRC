@@ -48,6 +48,7 @@ dialog #aguarde {
     height: 60px;
     background-size: 70% 70%;
     border: none;
+    margin-top: 5px;
 }
 
 .a{
@@ -56,4 +57,5 @@ dialog #aguarde {
     height: 60px;
     background-size: 70% 70%;
     border: none;
+    margin-top: 5px;
 }
