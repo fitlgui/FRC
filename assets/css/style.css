@@ -43,7 +43,7 @@ dialog #aguarde {
 }
 
 .b{
-    background: url("../img/mais.jpeg");
+    background: url("../img/mais.jpeg") no-repeat;
     width: 60px;
     height: 60px;
     background-size: 70% 70%;
@@ -51,7 +51,7 @@ dialog #aguarde {
 }
 
 .a{
-    background: url("../img/menos.jpeg");
+    background: url("../img/menos.jpeg") no-repeat;
     width: 60px;
     height: 60px;
     background-size: 70% 70%;
