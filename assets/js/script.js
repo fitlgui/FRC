@@ -88,7 +88,7 @@ function updateTotalValue() {
         document.getElementById(id).value = novo;
       }
       
-      function menos(){
+      function menos(id){
         var atual = document.getElementById(id).value;
         if(atual > 0) { //evita números negativos
           var novo = atual - 1;
