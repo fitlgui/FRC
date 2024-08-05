@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="pt-br">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,6 +10,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
     <div class="container mt-2" id="body">
         <div class="container-fluid p-4 border border-danger border-1 rounded-2 mb-2 text-center">
@@ -25,49 +27,53 @@
             </div>
         </div>
         <form name="" action="#" class="">
-        <div class="container-fluid p-2 border border-danger border-1 rounded-2 mb-2">
-            <div class="row">
-                <div class="col">
-                    <div class="input-group">
-                        <span class="input-group-text">Equipe</span>
-                        <input type="text" aria-label="First name" required placeholder="Número da Equipe" class="form-control" id="equipe">
+            <div class="container-fluid p-2 border border-danger border-1 rounded-2 mb-2">
+                <div class="row">
+                    <div class="col">
+                        <div class="input-group">
+                            <span class="input-group-text">Equipe</span>
+                            <input type="text" aria-label="First name" required placeholder="Número da Equipe"
+                                class="form-control" id="equipe">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="col">
+                        <div class="input-group">
+                            <span class="input-group-text">Partida</span>
+                            <input type="text" aria-label="First name" required placeholder="Número da Partida"
+                                class="form-control" id="partida">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="col">
+                        <div class="input-group-text">
+                            <label for="" class="m-1">Aliança</label>
+                            <div class="form-check m-1">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="Red"
+                                    value="Red">
+                                <label class="form-check-label alianca-vermelha" for="flexRadioDefault1">
+                                    Red
+                                </label>
+                            </div>
+                            <div class="form-check m-1">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="Blue"
+                                    value="Blue" checked>
+                                <label class="form-check-label alianca-azul" for="flexRadioDefault2">
+                                    Blue
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="col text-center">
+                        <span class="input-group-text" id="totalValue">0</span>
                     </div>
                 </div>
             </div>
-            <div class="row mt-1">
-                <div class="col">
-                    <div class="input-group">
-                        <span class="input-group-text">Partida</span>
-                        <input type="text" aria-label="First name" required placeholder="Número da Partida" class="form-control" id="partida">
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-1">
-                <div class="col">
-                    <div class="input-group-text">
-                        <label for="" class="m-1">Aliança</label>
-                        <div class="form-check m-1">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="Red" value="Red">
-                            <label class="form-check-label alianca-vermelha" for="flexRadioDefault1">
-                              Red
-                            </label>
-                          </div>
-                          <div class="form-check m-1">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="Blue" value="Blue" checked>
-                            <label class="form-check-label alianca-azul" for="flexRadioDefault2">
-                              Blue
-                            </label>
-                          </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-1">
-                <div class="col text-center">
-                    <span class="input-group-text" id="totalValue">0</span>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid p-3 border border-danger border-1 rounded-2">
+            <div class="container-fluid p-3 border border-danger border-1 rounded-2">
                 <span class="fw-bolder">AUTONOMO</span>
                 <div class="row g-3 mt-2">
                     <span class="fw-bolder">Saiu da Linha</span>
@@ -81,39 +87,44 @@
                 <div class="row g-3 mt-3">
                     <div class="col-md-5 mt-1">
                         <label for="rangeafautonomo" class="form-label fw-bolder">Alto Falante:</label>
-                        <input type="number" class="form-control text-center fs-2 bg-white" id="rangeafautonomo" min="0" max="10" value="0" disabled>
-                           <input type="button" onclick="menos('rangeafautonomo')" class="a" value="-">
-                           <input type="button" onclick="mais('rangeafautonomo')" class="b" value="+">                       
-                    </div>  
+                        <input type="number" class="form-control text-center fs-2 bg-white" id="rangeafautonomo" min="0"
+                            max="10" value="0" disabled>
+                        <input type="button" onclick="menos('rangeafautonomo')" class="a" value="-">
+                        <input type="button" onclick="mais('rangeafautonomo')" class="b" value="+">
+                    </div>
                     <div class="col-md-5 mt-1">
                         <label for="rangeampautonomo" class="form-label fw-bolder">Amplificador:</label>
-                        <input type="number" class="form-control text-center fs-2 bg-white" id="rangeampautonomo" min="0" max="10" value="0" disabled>
-                            <input type="button" onclick="menos('rangeampautonomo')" class="a" value="-">
-                            <input type="button" onclick="mais('rangeampautonomo')" class="b" value="+">     
+                        <input type="number" class="form-control text-center fs-2 bg-white" id="rangeampautonomo"
+                            min="0" max="10" value="0" disabled>
+                        <input type="button" onclick="menos('rangeampautonomo')" class="a" value="-">
+                        <input type="button" onclick="mais('rangeampautonomo')" class="b" value="+">
                     </div>
                 </div>
-        </div>
-        <div class="container-fluid p-3 border border-danger border-1 rounded-2 mt-3">
+            </div>
+            <div class="container-fluid p-3 border border-danger border-1 rounded-2 mt-3">
                 <span class="fw-bolder">TELE-OP</span>
                 <div class="row g-3 mt-3">
                     <div class="col-md-4 mt-1">
                         <label for="rangeaf" class="form-label fw-bolder">Alto Falante:</label>
-                        <input type="number" class="form-control text-center fs-2 bg-white" id="rangeaf" min="0" max="30" value="0" disabled>
+                        <input type="number" class="form-control text-center fs-2 bg-white" id="rangeaf" min="0"
+                            max="30" value="0" disabled>
                         <input type="button" onclick="menos('rangeaf')" class="a" value="-">
-                        <input type="button" onclick="mais('rangeaf')" class="b" value="+">     
+                        <input type="button" onclick="mais('rangeaf')" class="b" value="+">
                     </div>
                     <div class="col-md-4 mt-1">
                         <label for="rangeafc" class="form-label fw-bolder">Auto Falante(Amplificado):</label>
-                        <input type="number" class="form-control text-center fs-2 bg-white" id="rangeafc" min="0" max="30" value="0" disabled>
+                        <input type="number" class="form-control text-center fs-2 bg-white" id="rangeafc" min="0"
+                            max="30" value="0" disabled>
                         <input type="button" onclick="menos('rangeafc')" class="a" value="-">
-                        <input type="button" onclick="mais('rangeafc')" class="b" value="+">     
+                        <input type="button" onclick="mais('rangeafc')" class="b" value="+">
                     </div>
                     <div class="col-md-4 mt-1">
                         <label for="rangeapf" class="form-label fw-bolder">Amplificador:</label>
                         <label for="rangeapf">Valor selecionado = <span id="apf">0</span></label>
-                        <input type="number" class="form-control text-center fs-2 bg-white" id="rangeapf" min="0" max="30" value="0" disabled>
+                        <input type="number" class="form-control text-center fs-2 bg-white" id="rangeapf" min="0"
+                            max="30" value="0" disabled>
                         <input type="button" onclick="menos('rangeapf')" class="a" value="-">
-                        <input type="button" onclick="mais('rangeapf')" class="b" value="+">     
+                        <input type="button" onclick="mais('rangeapf')" class="b" value="+">
                     </div>
                 </div>
                 <div class="row g-3 mt-3">
@@ -152,61 +163,70 @@
                             <label class="form-check-label" for="checkestacionou" id="labelestacionou">Não</label>
                         </div>
                     </div>
-                    <div class="row mt-1">
-                        <div class="col">
+                    <div class="row text-center align-items-center mt-1">
+                        <div class="col-1">
+                            <input type="button" onclick="menos('falta')" class="a" value="-">
+                        </div>
+                        <div class="col-3">
                             <div class="input-group">
-                                <span class="input-group-text">Penalidades</span>
-                                <input type="number" aria-label="Faltas" value="0" placeholder="Pontos Por Faltas" class="form-control text-center fs-2 bg-white" id="falta" disabled>
-                                <input type="button" onclick="menos('falta')" class="a" value="-">
-                                <input type="button" onclick="mais('falta')" class="b" value="+">     
+                                <label for="rangeaf" class="form-label fw-bolder">Faltas:</label>
+                                <input type="number" aria-label="Faltas" value="0" placeholder="Pontos Por Faltas"
+                                    class="form-control text-center fs-2 bg-white" id="falta" disabled>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row mt-1">
-                    <div class="col">
-                        <div class="input-group-text">
-                            <label for="" class="m-1">Resultado</label>
-                            <div class="form-check m-1">
-                                <input class="form-check-input" type="radio" id="vitoria" name="flexRadioDefault" checked>
-                                <label class="form-check-label vitoria" for="flexRadioDefault1">
-                                  Vitória
-                                </label>
-                              </div>
-                              <div class="form-check m-1">
-                                <input class="form-check-input" type="radio" id="empate" name="flexRadioDefault">
-                                <label class="form-check-label empate" for="flexRadioDefault2">
-                                  Empate
-                                </label>
-                              </div>
-                              <div class="form-check m-1">
-                                <input class="form-check-input" type="radio" id="derrota" name="flexRadioDefault">
-                                <label class="form-check-label derrota" for="flexRadioDefault2">
-                                  Derrota
-                                </label>
-                              </div>
+                        <div class="col-1">
+                            <input type="button" onclick="mais('falta')" class="b" value="+">
                         </div>
-                    </div>
-                </div>
-        </div>
-        <div class="container-fluid p-3 border border-danger border-1 rounded-2 mb-1 mt-1">
-            <div class="row">
-                <div class="col">
-                    <div class="input-group">
-                        <span class="input-group-text"><b><i>Chave De Acesso</i></b></span>
-                        <input type="password" aria-label="Acess" class="form-control" id="key">
                     </div>
                 </div>
             </div>
+            <div class="row mt-1">
+                <div class="col">
+                    <div class="input-group-text">
+                        <label for="" class="m-1">Resultado</label>
+                        <div class="form-check m-1">
+                            <input class="form-check-input" type="radio" id="vitoria" name="flexRadioDefault" checked>
+                            <label class="form-check-label vitoria" for="flexRadioDefault1">
+                                Vitória
+                            </label>
+                        </div>
+                        <div class="form-check m-1">
+                            <input class="form-check-input" type="radio" id="empate" name="flexRadioDefault">
+                            <label class="form-check-label empate" for="flexRadioDefault2">
+                                Empate
+                            </label>
+                        </div>
+                        <div class="form-check m-1">
+                            <input class="form-check-input" type="radio" id="derrota" name="flexRadioDefault">
+                            <label class="form-check-label derrota" for="flexRadioDefault2">
+                                Derrota
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="container-fluid p-3 border border-danger border-1 rounded-2 mb-1 mt-1">
+        <div class="row">
+            <div class="col">
+                <div class="input-group">
+                    <span class="input-group-text"><b><i>Chave De Acesso</i></b></span>
+                    <input type="password" aria-label="Acess" class="form-control" id="key">
+                </div>
+            </div>
+        </div>
         <button class="btn btn-success mt-3 mb-4" type="button" id="enviar">Gravar Scout</button>
     </div>
     </form>
     <div>
         <dialog id="sucesso"><b>Enviado Com Sucesso!</b></dialog>
         <dialog id="erro"><b>Erro Ao Enviar, Tente Novamente!</b></dialog>
-    </div> 
+    </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 <script src="assets/js/script.js"></script>
-'</html>
+'
+
+</html>
