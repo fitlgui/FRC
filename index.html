@@ -110,7 +110,6 @@
                     </div>
                     <div class="col-md-4 mt-1">
                         <label for="rangeapf" class="form-label fw-bolder">Amplificador:</label>
-                        <label for="rangeapf">Valor selecionado = <span id="apf">0</span></label>
                         <input type="number" class="form-control text-center fs-2 bg-white" id="rangeapf" min="0" max="30" value="0" disabled>
                         <input type="button" onclick="menos('rangeapf')" class="a" value="-">
                         <input type="button" onclick="mais('rangeapf')" class="b" value="+">     
@@ -152,15 +151,11 @@
                             <label class="form-check-label" for="checkestacionou" id="labelestacionou">Não</label>
                         </div>
                     </div>
-                    <div class="row mt-1">
-                        <div class="col">
-                            <div class="input-group">
+                    <div class="col-md-4 mt-1">
                                 <label for="rangeaf" class="form-label fw-bolder">Faltas:</label>
                                 <input type="number" class="form-control text-center fs-2 bg-white" id="falta" min="0" max="30" value="0" disabled>
                                 <input type="button" onclick="menos('falta')" class="a" value="-">
-                                <input type="button" onclick="mais('falta')" class="b" value="+">     
-                            </div>
-                        </div>
+                                <input type="button" onclick="mais('falta')" class="b" value="+">
                     </div>
                 </div>
                 <div class="row mt-1">
