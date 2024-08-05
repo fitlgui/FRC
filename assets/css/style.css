@@ -42,18 +42,18 @@ dialog #aguarde {
     color: red;
 }
 
-.a{
+.b{
     background: url("../img/mais.jpeg");
     width: 60px;
     height: 60px;
-    background-size: 100%;
+    background-size: 70% 70%;
     border: none;
 }
 
-.b{
+.a{
     background: url("../img/menos.jpeg");
     width: 60px;
     height: 60px;
-    background-size: 100% 100%;
+    background-size: 70% 70%;
     border: none;
 }
