@@ -80,10 +80,11 @@
                 </div>
                 <div class="row g-3 mt-3">
                     <div class="col-md-5 mt-1">
-                        <label for="rangeafautonomo" class="form-label fw-bolder">Alto Falante:</label>
-                        <label for="rangeafautonomo">Valor selecionado = <span id="afautonomo">0</span></label>
-                        <input type="number" class="form-range" id="rangeafautonomo" min="0" max="10" value="0">
-                    </div>
+                        <div>
+
+                            <input placeholder="Notas Speaker Autonomo:" min=0 id="total" type="number"><button onclick="menos()" class="a">-</button><button onclick="mais()" class="b">+</button>
+                          
+                          </div></div>
                     <div class="col-md-5 mt-1">
                         <label for="rangeampautonomo" class="form-label fw-bolder">Amplificador:</label>
                         <label for="rangeampautonomo">Valor selecionado = <span id="ampautonomo">0</span></label>
@@ -201,4 +202,19 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="assets/js/script.js"></script>
-'</html>
+<script>
+    function mais(){
+        var atual = document.getElementById("total").value;
+        var novo = atual - (-1); //Evitando Concatenacoes
+        document.getElementById("total").value = novo;
+      }
+      
+      function menos(){
+        var atual = document.getElementById("total").value;
+        if(atual > 0) { //evita números negativos
+          var novo = atual - 1;
+          document.getElementById("total").value = novo;
+        }
+      }
+</script>
+</html>
