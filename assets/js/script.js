@@ -80,6 +80,22 @@ function updateTotalValue() {
     return ValorTotal;
 }
 
+// Função Numbers
+
+    function mais(id){
+        var atual = document.getElementById(id).value;
+        var novo = atual - (-1); //Evitando Concatenacoes
+        document.getElementById(id).value = novo;
+      }
+      
+      function menos(){
+        var atual = document.getElementById(id).value;
+        if(atual > 0) { //evita números negativos
+          var novo = atual - 1;
+          document.getElementById(id).value = novo;
+        }
+}
+
 // Funções de manipulação dos checkboxes
 checksaida.addEventListener('change', function () {
     zona = this.checked ? 2 : 0;
